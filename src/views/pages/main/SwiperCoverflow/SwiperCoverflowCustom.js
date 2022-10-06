@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
 // ** Reactstrap Imports
 import { Card, CardHeader, CardTitle, CardBody, Button } from 'reactstrap'
 
+import jwtDefaultConfig from "@src/@core/auth/jwt/jwtDefaultConfig"
 
 // ** Images
 // const  img_none = lazy(() => import('@src/assets/images/banner/banner-none.webp')) 
@@ -74,7 +75,7 @@ const SwiperCoverflowCustom = ({ isRtl, changeState, isShowEditButton, data}) =>
                   key={index}
                 >
                   <LazyLoadImage 
-                    src={`https://sichain.herokuapp.com${item.file_path}`}
+                    src={`${jwtDefaultConfig.endPoint}${item.file_path}`}
                     width='100%' height='200px'
                     style={{
                       objectFit: 'fit'

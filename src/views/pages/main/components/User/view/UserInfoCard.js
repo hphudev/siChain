@@ -127,9 +127,9 @@ const UserInfoCard = ({ selectedUser }) => {
 
   const handleReset = () => {
     reset({
-      username: selectedUser.username,
-      lastName: selectedUser.fullName.split(' ')[1],
-      firstName: selectedUser.fullName.split(' ')[0]
+      // username: selectedUser.username,
+      // lastName: selectedUser.fullName.split(' ')[1],
+      // firstName: selectedUser.fullName.split(' ')[0]
     })
   }
 

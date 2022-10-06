@@ -1,6 +1,6 @@
 // ** Domain
 // import jwt from '../../../../../../../src/@core/auth/jwt/jwtDefaultConfig'
-import jwtDefaultConfig from '@src//@core/auth/jwt/jwtDefaultConfig'
+import jwtDefaultConfig from '@src/@core/auth/jwt/jwtDefaultConfig'
 
 // ** Redux Imports
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
