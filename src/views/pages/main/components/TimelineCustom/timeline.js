@@ -19,6 +19,7 @@ const Timeline = props => {
       })}
     >
       {data.map((item, i) => {
+        console.log(item)
         const ItemTag = item.tag ? item.tag : 'li'
         const date_for_buy = new Date(item.ProductHistory.created_at)
         const date_for_pay = new Date(item.ProductHistory.updated_at)
@@ -93,20 +94,42 @@ const Timeline = props => {
                   <div className='d-flex flex-column'>
                     <span className='fw-bolder'>
                       <User size={16} className="me-1"/>
-                      Người bán
+                      Người bán 
+                      <span className=''>
+                      {
+                        (item.seller_parent !== null) ? (' (Tài khoản con)') : ('')
+                      }
+                      </span>
                     </span>
-                    <span className='text-truncate mb-0'>Họ tên: <span className='text-warning'>{(item.buyer_name !== null) ? item.buyer_name : "chưa có"}</span></span>
-                    <span className='text-truncate mb-0'>Địa chỉ: <span className='text-warning'>{(item.buyer_address !== null) ? item.buyer_address : "chưa có"}</span></span>
+                    <span className='text-truncate mb-0'>Họ tên: <span className='text-warning'>{(item.seller_name !== null) ? item.seller_name : "chưa có"}</span></span>
+                    <span className='text-truncate mb-0'>Địa chỉ: <span className='text-warning'>{(item.seller_address !== null) ? item.seller_address : "chưa có"}</span></span>
+                    <span className='text-truncate mb-0'>Email: <span className='text-warning'>{(item.seller_email !== null) ? item.seller_email : "chưa có"}</span></span>
+                    {
+                      (item.seller_parent !== null) ? (
+                        <span className='text-truncate mb-0'>Email tài khoản gốc: <span className='text-warning'>{(item.seller_parent.email !== null) ? item.seller_parent.email : "chưa có"}</span></span>
+                      ) : ''
+                    }
                   </div>
                 </Col>
                 <Col sm="6">
                   <div className='d-flex flex-column'>
                     <span className='fw-bolder'>
                       <User size={16} className="me-1"/>
-                      Người mua
+                      Người mua 
+                      <span className=''>
+                        {
+                          (item.buyer_parent !== null) ? (' (Tài khoản con)') : ('')
+                        }
+                      </span>
                     </span>
-                    <span className='text-truncate mb-0'>Họ tên: <span className='text-warning'>{(item.seller_name !== null) ? item.seller_name : "chưa có"}</span></span>
-                    <span className='text-truncate mb-0'>Địa chỉ: <span className='text-warning'>{(item.seller_address !== null) ? item.seller_address : "chưa có"}</span></span>
+                    <span className='text-truncate mb-0'>Họ tên: <span className='text-warning'>{(item.buyer_name !== null) ? item.buyer_name : "chưa có"}</span></span>
+                    <span className='text-truncate mb-0'>Địa chỉ: <span className='text-warning'>{(item.buyer_address !== null) ? item.buyer_address : "chưa có"}</span></span>
+                    <span className='text-truncate mb-0'>Email: <span className='text-warning'>{(item.buyer_email !== null) ? item.buyer_email : "chưa có"}</span></span>
+                    {
+                      (item.buyer_parent !== null) ? (
+                        <span className='text-truncate mb-0'>Email tài khoản gốc: <span className='text-warning'>{(item.buyer_parent.email !== null) ? item.buyer_parent.email : "chưa có"}</span></span>
+                      ) : ''
+                    }
                   </div>
                 </Col>
               </Row>
